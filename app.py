@@ -10,7 +10,7 @@ import plotly.express as px
 # new
 from openai import OpenAI
 
-client = openAI(
+client = OpenAI(
   api_key=st.secrets["openai"]["api_key"]  # this is also the default, it can be omitted
 )
 
@@ -33,7 +33,7 @@ def query_gpt_to_sql(question):
 
     prompt = system_prompt + f"\n\nFrage: {question}\nSQL:"
 
-    response = openai.Completion.create(
+    response = OpenAI.Completion.create(
         engine="text-davinci-003",
         prompt=prompt,
         temperature=0,
