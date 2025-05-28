@@ -33,7 +33,7 @@ def query_gpt_to_sql(question):
 
     prompt = system_prompt + f"\n\nFrage: {question}\nSQL:"
 
-    response = OpenAI.Completion.create(
+    response = client.Completion.create(
         engine="text-davinci-003",
         prompt=prompt,
         temperature=0,
