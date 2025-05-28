@@ -10,7 +10,7 @@ import plotly.express as px
 # new
 from openai import openai
 
-client = OpenAI(
+client = openai(
   api_key=st.secrets["openai"]["api_key"]  # this is also the default, it can be omitted
 )
 
