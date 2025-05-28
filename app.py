@@ -33,15 +33,21 @@ def query_gpt_to_sql(question):
 
     prompt = system_prompt + f"\n\nFrage: {question}\nSQL:"
 
-    response = client.completions.create(
-      #model='curie',
-       # engine="text-davinci-003",
-        model='gpt-4.1',
-        prompt=prompt,
-        temperature=0,
-        max_tokens=150,
-        stop=["#",";"]
-    )
+#    response = client.completions.create(
+ #     #model='curie',
+ #      # engine="text-davinci-003",
+#        model='gpt-4.1',
+#        prompt=prompt,
+ #       temperature=0,
+#        max_tokens=150,
+#        stop=["#",";"]
+ #   )
+
+response = client.responses.create(
+    model="gpt-4.1",
+    input=prompt
+)
+  
     sql_query = response.choices[0].text.strip()
     return sql_query
 
