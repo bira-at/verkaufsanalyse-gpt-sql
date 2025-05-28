@@ -8,9 +8,9 @@ import plotly.express as px
 #openai.api_key = st.secrets["openai"]["api_key"]
 
 # new
-from openai import openai
+from openai import OpenAI
 
-client = openai(
+client = openAI(
   api_key=st.secrets["openai"]["api_key"]  # this is also the default, it can be omitted
 )
 
