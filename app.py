@@ -36,7 +36,7 @@ def query_gpt_to_sql(question):
     response = client.completions.create(
       #model='curie',
        # engine="text-davinci-003",
-        model: "gpt-4.1",
+        model='gpt-4.1',
         prompt=prompt,
         temperature=0,
         max_tokens=150,
