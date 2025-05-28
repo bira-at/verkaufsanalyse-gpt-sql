@@ -1,11 +1,18 @@
 import streamlit as st
 import sqlite3
 import pandas as pd
-import openai
+#import openai
 import plotly.express as px
 
 # OpenAI API-Key aus Secrets laden
-openai.api_key = st.secrets["openai"]["api_key"]
+#openai.api_key = st.secrets["openai"]["api_key"]
+
+# new
+from openai import OpenAI
+
+client = OpenAI(
+  api_key=os.environ['OPENAI_API_KEY'],  # this is also the default, it can be omitted
+)
 
 st.title("Verkaufsanalyse per Spracheingabe")
 
