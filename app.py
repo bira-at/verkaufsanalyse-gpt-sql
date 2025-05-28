@@ -32,7 +32,7 @@ def query_gpt_to_sql(question):
     """
 
     prompt = system_prompt + f"\n\nFrage: {question}\nSQL:"
-    response = client.completions.create(engine="text-davinci-003",prompt=prompt,temperature=0,max_tokens=150,stop=["#",";"]
+    response = client.completions.create(engine="text-davinci-003",prompt=prompt,temperature=0,max_tokens=150,stop=["#",";"])
       #model='gpt-3.5-turbo-instruct',prompt=prompt)
 
   
