@@ -34,7 +34,7 @@ def query_gpt_to_sql(question):
     prompt = system_prompt + f"\n\nFrage: {question}\nSQL:"
 
    response = client.completions.create(
-  model="gpt-3.5-turbo-instruct",
+  model='gpt-3.5-turbo-instruct',
   prompt=prompt
 )
 
